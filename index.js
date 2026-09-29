@@ -5,6 +5,7 @@ const express=require('express')
 const cors=require('cors')
 const router = require('./Routes/route')
 require('./Controllers/dbConnect/db')
+const jwtmiddleware=require('./Middlewares/jwtMiddleware')
 // craeting server instance
 const server=express()
 
@@ -13,6 +14,7 @@ server.use(cors())
 
 // enabling json middleware
 server.use(express.json())
+server.use(jwtmiddleware)
 
 // configuring router
 server.use(router)
