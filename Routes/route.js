@@ -6,7 +6,7 @@ const router = new express.Router()
 
 router.post('/register',userController.userRegister)
 router.post('/login',userController.userLogin)
-router.get('/profile-edit',jwtMiddle,userController.profileEdit)
-
+router.post('/google-auth',userController.googleLogin)
+router.post('/profile-edit',jwtMiddle,userController.profileEdit)
 
 module.exports=router

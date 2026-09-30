@@ -14,7 +14,6 @@ server.use(cors())
 
 // enabling json middleware
 server.use(express.json())
-server.use(jwtmiddleware)
 
 // configuring router
 server.use(router)
