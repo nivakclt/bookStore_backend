@@ -26,6 +26,10 @@ server.listen(port,()=>{
     console.log(`Server Started at ${port} & waiting for client requests`)
 })
 
+// handling global errrors using application level middleware
+server.use((err,req,res,next)=>{
+    res.status(500).json(err)
+})
 
 
 
