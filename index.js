@@ -32,32 +32,6 @@ server.use((err,req,res,next)=>{
 })
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // // resolving api(http://localhost:3000) using express
 // server.get('/',(req,res)=>{
 //     res.send["<h1>server is running waiting for client request</h1>"]

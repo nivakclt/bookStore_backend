@@ -88,11 +88,20 @@ exports.googleLogin = async (req, res) => {
 };
 
 //profile edit
-exports.profileEdit = (req, res) => {
-  console.log(req.body)
-  console.log(req.file)
-  console.log(req.params)
-  console.log(req.query)
-  console.log(req.payload)
-  res.status(200).json("Profile");
+exports.profileEdit = async(req, res) => {
+  // console.log(req.body)
+  // console.log(req.file)
+  // console.log(req.params)
+  // console.log(req.query)
+  // console.log(req.payload)
+  // res.status(200).json("Profile");
+
+  const {username,email,password,bio}=req.body
+  const id=req.payload?.userId
+  const picture=req.file?req.file.filename:picture
+  const encryptedPassword=await bcrypt.hash(password,10)
+  const updatedUser=await users.findOneAndUpdate({_id:id},{username,email,password:encryptedPassword,bio,picture},{new:true})
+  res.status(200).json(updatedUser);
+
+ 
 };
