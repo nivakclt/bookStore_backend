@@ -9,6 +9,9 @@ const jwtmiddleware=require('./Middlewares/jwtMiddleware')
 // craeting server instance
 const server=express()
 
+// configuring the static folder to serve static files like images,css,js etc
+server.use('/uploads',express.static('uploads'))
+
 // enabling cors in server
 server.use(cors())
 
