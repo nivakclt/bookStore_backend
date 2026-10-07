@@ -31,6 +31,7 @@ server.listen(port,()=>{
 
 // handling global errrors using application level middleware
 server.use((err,req,res,next)=>{
+    console.log(err)
     res.status(500).json(err)
 })
 
