@@ -14,6 +14,6 @@ router.post('/login',userController.userLogin)
 router.post('/google-auth',userController.googleLogin)
 router.put('/profile-edit/:id',jwtMiddle,multerMiddleware.single("picture"),userController.profileEdit)
 
-router.post('/add-book',jwtMiddle,multerMiddleware.array("uploadedImages"),bookController.addBook)
+router.post('/books',jwtMiddle,multerMiddleware.array("uploadedImages",3),bookController.addBook)
 
 module.exports=router

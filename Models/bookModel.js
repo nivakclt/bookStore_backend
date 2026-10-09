@@ -20,7 +20,7 @@ const bookSchema = new mongoose.Schema({
     },
     imageUrl:{
         type:String,
-        required:true
+        default: ""
     },
     price:{
         type:Number,
